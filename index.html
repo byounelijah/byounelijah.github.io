@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://unpkg.com/xp.css" />
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Windows XP Desktop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<section id="desktop">
+  <div class="desktop-icon" id="portfolio-icon">
+    <img src="images/folder1.png" alt="folder icon" />
+    <span>Projects</span>
+  </div>
+
+  <!-- Portfolio Window -->
+  <div id="portfolio-window" class="window draggable-window" style="width: 400px; display: none; position: absolute; top: 120px; left: 120px;">
+    <div class="title-bar">
+      <div class="title-bar-text">My Projects</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" id="close-portfolio"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>Welcome to my projects!</p>
+      <ul>
+        <li><a href="#" id="open-project1">Moody's Mock Scenario Studio API</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Project 1 Window -->
+  <div id="project1-window" class="window draggable-window" 
+       style="width: 300px; display: none; position: absolute; top: 150px; left: 150px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Project 1</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" id="close-project1"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>This is where you can write about Project 1.</p>
+    </div>
+  </div>
+
+  <!-- About Me Window-->
+  <div id="about-window" class="window draggable-window" style="width: 300px; position: absolute; top: 150px; left: 500px;">
+    <div class="title-bar">
+      <div class="title-bar-text">About Me</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" id="close-about"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>Hi! My name is Elijah, a rising junior at Rutgers University studying Computer Science with a Mathematics minor. I am captivated by the very concept of machine learning, not only its applications but its implications on morality as well. In my free-time, you can catch me playing in my band, going to the gym, and having deep talks with my friends!</p>
+      <a href="https://github.com/byounelijah">My Github!</a>
+      <p><a href="linkedin.com/in/elijah-byoun-640601256">My LinkedIn!</a> </p>
+    </div>
+  </div>
+
+  <!-- Contact Window-->
+  <div id="contact-window" class="window draggable-window" style="width: 300px; position: absolute; top: 500px; left: 1000px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Contact Me</div>
+      <div class="title-bar-controls">
+        <button aria-label="Close" id="close-contact"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <form action="https://formspree.io/f/meolgeab" method="POST">
+        <label>Your Name:<br><input type="text" name="name" required></label><br><br>
+        <label>Email:<br><input type="email" name="email" required></label><br><br>
+        <label>Message:<br><textarea name="message" rows="4" required></textarea></label><br><br>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+
+	<div id="taskbar">
+		<div class="background sliced vertical">
+			<div class="row top"></div>
+			<div class="row middle"></div>
+			<div class="row bottom"></div>
+		</div>
+		<div id="start-button">
+			<div class="container">
+				<div class="background sliced">
+					<div class="column left">
+						<div class="row top"></div>
+						<div class="row middle"></div>
+						<div class="row bottom"></div>
+					</div>
+					<div class="column middle">
+						<div class="row top"></div>
+						<div class="row middle"></div>
+						<div class="row bottom"></div>
+					</div>
+					<div class="column right">
+						<div class="row top"></div>
+						<div class="row middle"></div>
+						<div class="row bottom"></div>
+					</div>
+				</div>
+				<div class="content">
+					<span class="icon"><img src="images/WindowsLogo-small.png" /></span>
+					<span class="text">Start</span>
+				</div>
+				<div class="overlay" title="Clique aqui para começar"></div>
+			</div>
+		</div>
+		<div id="task-band">
+		</div>
+		<div id="tray-notify">
+			<div class="container">
+				<div class="background sliced">
+					<div class="column left">
+						<div class="row top"></div>
+						<div class="row middle"></div>
+						<div class="row bottom"></div>
+					</div>
+					<div class="column middle">
+						<div class="row top"></div>
+						<div class="row middle"></div>
+						<div class="row bottom"></div>
+					</div>
+					<div class="column right">
+						<div class="row top"></div>
+						<div class="row middle"></div>
+						<div class="row bottom"></div>
+					</div>
+				</div>
+				<div class="content">
+					<div id="clock">
+						
+						<div class="overlay"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+  const portfolioIcon = document.getElementById("portfolio-icon");
+  const portfolioWindow = document.getElementById("portfolio-window");
+  const closePortfolio = document.getElementById("close-portfolio");
+
+  const openProject1 = document.getElementById("open-project1");
+  const project1Window = document.getElementById("project1-window");
+  const closeProject1 = document.getElementById("close-project1");
+
+  const aboutWindow = document.getElementById("about-window");
+  const closeAbout = document.getElementById("close-about");
+
+  const contactWindow = document.getElementById("contact-window");
+  const closeContact = document.getElementById("close-contact");
+
+  // Portfolio window
+  if (portfolioIcon && portfolioWindow && closePortfolio) {
+    portfolioIcon.addEventListener("dblclick", () => {
+      portfolioWindow.style.display = "block";
+    });
+    closePortfolio.addEventListener("click", () => {
+      portfolioWindow.style.display = "none";
+    });
+  }
+
+  // Project 1 window
+  if (openProject1 && project1Window && closeProject1) {
+    openProject1.addEventListener("click", (e) => {
+      e.preventDefault();
+      project1Window.style.display = "block";
+    });
+    closeProject1.addEventListener("click", () => {
+      project1Window.style.display = "none";
+    });
+  }
+
+  // About window close
+  if (aboutWindow && closeAbout) {
+    closeAbout.addEventListener("click", () => {
+      aboutWindow.style.display = "none";
+    });
+  }
+
+  function makeDraggable(el) {
+    const titleBar = el.querySelector(".title-bar");
+    let offsetX = 0, offsetY = 0, isDragging = false;
+
+    titleBar.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      offsetX = e.clientX - el.offsetLeft;
+      offsetY = e.clientY - el.offsetTop;
+      el.style.zIndex = 1000;
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (isDragging) {
+        el.style.left = e.clientX - offsetX + "px";
+        el.style.top = e.clientY - offsetY + "px";
+      }
+    });
+
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+    });
+  }
+    // Apply to all draggable windows
+    document.querySelectorAll(".draggable-window").forEach(makeDraggable);
+
+  function updateClock() {
+  const now = new Date(); // Get current date and time
+  let hours = now.getHours();
+  let minutes = now.getMinutes();
+  let seconds = now.getSeconds();
+
+  // Add leading zeros if hours, minutes, or seconds are less than 10
+  hours = hours < 10 ? '0' + hours : hours;
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  seconds = seconds < 10 ? '0' + seconds : seconds;
+
+  const timeString = `${hours}:${minutes}:${seconds}`;
+
+  document.getElementById('clock').innerHTML = timeString;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
+
+// Initial call to display the clock immediately
+updateClock();
+
+
+</script>
+</body>
