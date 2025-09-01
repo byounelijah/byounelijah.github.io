@@ -13,6 +13,9 @@
   <div class="desktop-icon" id="portfolio-icon">
     <img src="images/folder1.png" alt="folder icon" />
     <span>Projects</span>
+  </div>
+
+  <div class="desktop-icon" id="resume-icon">
     <img src="images/folder1.png" alt="resume icon" />
     <span>Resume</span>
   </div>
@@ -159,6 +162,8 @@
   const contactWindow = document.getElementById("contact-window");
   const closeContact = document.getElementById("close-contact");
 
+  const resumeIcon = document.getElementById("resume-icon");
+
   // Portfolio window
   if (portfolioIcon && portfolioWindow && closePortfolio) {
     portfolioIcon.addEventListener("dblclick", () => {
@@ -184,6 +189,18 @@
   if (aboutWindow && closeAbout) {
     closeAbout.addEventListener("click", () => {
       aboutWindow.style.display = "none";
+    });
+  }
+
+  // Resume icon double-click to download resume.pdf
+  if (resumeIcon) {
+    resumeIcon.addEventListener("dblclick", () => {
+      const link = document.createElement('a');
+      link.href = 'resume.pdf';
+      link.download = 'resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     });
   }
 
