@@ -6,8 +6,45 @@
     p {
         font-size: 16px;
     }
-    a {font-size: 16px}
-</style>
+    a { font-size: 16px; }
+
+    /* Primary pointer cursor for interactive elements */
+    button,
+    a,
+    .desktop-icon,
+    .desktop-icon img,
+    .desktop-icon span,
+    .title-bar-controls button,
+    .window .title-bar .title-bar-controls button,
+    #close-portfolio,
+    #close-project1,
+    #close-about,
+    #close-resume,
+    #close-contact {
+      cursor: pointer !important;
+    }
+
+    /* Keep text cursor for text inputs and textareas */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      cursor: text;
+    }
+
+    /* Hover states (explicit) */
+    button:hover,
+    a:hover,
+    .desktop-icon:hover,
+    .desktop-icon img:hover,
+    .desktop-icon span:hover,
+    .title-bar-controls button:hover,
+    #close-portfolio:hover,
+    #close-project1:hover,
+    #close-about:hover,
+    #close-contact:hover {
+      cursor: pointer !important;
+    }
+  </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-39XNFHS1NW"></script>
 <script>
@@ -83,7 +120,7 @@
   </div>
 
   <!-- Contact Window-->
-  <div id="contact-window" class="window draggable-window" style="width: 300px; position: absolute; top: 500px; left: 1000px;">
+  <div id="contact-window" class="window draggable-window" style="width: 300px; position: absolute; top: 300px; left: 1000px;">
     <div class="title-bar">
       <div class="title-bar-text">Contact Me</div>
       <div class="title-bar-controls">
@@ -91,7 +128,7 @@
       </div>
     </div>
     <div class="window-body">
-      <form action="https://formspree.io/f/meolgeab" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/meolgeab" method="POST">
         <label>Your Name:<br><input type="text" name="name" required></label><br><br>
         <label>Email:<br><input type="email" name="email" required></label><br><br>
         <label>Message:<br><textarea name="message" rows="4" required></textarea></label><br><br>
@@ -269,5 +306,48 @@ setInterval(updateClock, 1000);
 updateClock();
 
 
+// Handle contact form submission with in-box thank-you message
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Prevent default form submission
+
+    // Check for required fields
+    const name = contactForm.querySelector('input[name="name"]');
+    const email = contactForm.querySelector('input[name="email"]');
+    const message = contactForm.querySelector('textarea[name="message"]');
+
+    if (!name.value.trim() || !email.value.trim() || !message.value.trim()) {
+      alert("Please fill out all fields before submitting.");
+      return;
+    }
+
+    // Basic email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        contactForm.innerHTML = "<p>Thank you for your message! I'll get back to you soon.</p>";
+      } else {
+        contactForm.innerHTML = "<p>Oops! Something went wrong. Please try again later.</p>";
+      }
+    } catch (error) {
+      contactForm.innerHTML = "<p>Network error. Please check your connection and try again.</p>";
+    }
+  });
+}
+
 </script>
-</body>
+</body></html>
