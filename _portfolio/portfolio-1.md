@@ -1,6 +1,6 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Moody's Scenario Studio Mock API"
+excerpt: "A mock implementation of the Moody's Scenario Studio API, created to simulate and visualize economic scenario data without requiring live API credentials. Built for learning, experimentation, API integration, data processing, and visualization skills.<br/>"
 collection: portfolio
 ---
 

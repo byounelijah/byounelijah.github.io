@@ -1,0 +1,800 @@
+#1 [internal] load local bake definitions
+#1 reading from stdin 561B done
+#1 DONE 0.0s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 879B 0.0s done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/ruby:3.2
+#3 DONE 0.5s
+
+#4 [1/9] FROM docker.io/library/ruby:3.2@sha256:ae248f145867d5210641f9404af1f84846caf535311ef04742bb13b8bb4da0c2
+#4 resolve docker.io/library/ruby:3.2@sha256:ae248f145867d5210641f9404af1f84846caf535311ef04742bb13b8bb4da0c2 0.0s done
+#4 sha256:3d98035c43cd3a9adc3792f78697e4ea52dd3478731408dfb8afb64f8030ccef 141B / 141B 0.1s done
+#4 sha256:2380116f6481180e4b60afb7fd34decbbcd062612cf1bc6fafc36615c55e9162 189B / 189B 0.2s done
+#4 sha256:d0f766ef2ec48737a0f300405019c312acd667d14467b50c402750d1454e3591 25.02MB / 25.02MB 7.1s done
+#4 sha256:9b7f0582540a4c1d0e1de9c60875fba688acb4bfd10d5299ec1ba2b5b1d8994e 36.31MB / 36.31MB 9.7s done
+#4 sha256:186d0d0b2411f880d1a385216013fead1acb2dee0584aac75da87dfdeb1202db 67.58MB / 67.58MB 16.5s done
+#4 sha256:04077a68e2b807cad70ec4dfc0a2e8e1ff1ea6d9523e4c8f042b9a1ae8a54409 49.65MB / 49.65MB 11.1s done
+#4 extracting sha256:04077a68e2b807cad70ec4dfc0a2e8e1ff1ea6d9523e4c8f042b9a1ae8a54409 0.9s done
+#4 extracting sha256:d0f766ef2ec48737a0f300405019c312acd667d14467b50c402750d1454e3591 0.4s done
+#4 extracting sha256:186d0d0b2411f880d1a385216013fead1acb2dee0584aac75da87dfdeb1202db 1.5s done
+#4 sha256:91656fd58bb5f57cac88ac067f1fad07e73ca96589dd592517520d14bd020eb7 226.08MB / 226.08MB 33.3s done
+#4 extracting sha256:91656fd58bb5f57cac88ac067f1fad07e73ca96589dd592517520d14bd020eb7 6.8s done
+#4 extracting sha256:2380116f6481180e4b60afb7fd34decbbcd062612cf1bc6fafc36615c55e9162 0.0s done
+#4 extracting sha256:9b7f0582540a4c1d0e1de9c60875fba688acb4bfd10d5299ec1ba2b5b1d8994e 0.7s done
+#4 extracting sha256:3d98035c43cd3a9adc3792f78697e4ea52dd3478731408dfb8afb64f8030ccef done
+#4 DONE 40.9s
+
+#5 [2/9] RUN apt-get update && apt-get install -y     build-essential     nodejs     && rm -rf /var/lib/apt/lists/*
+#5 0.378 Hit:1 http://deb.debian.org/debian trixie InRelease
+#5 0.397 Get:2 http://deb.debian.org/debian trixie-updates InRelease [47.3 kB]
+#5 0.419 Get:3 http://deb.debian.org/debian-security trixie-security InRelease [43.4 kB]
+#5 0.438 Get:4 http://deb.debian.org/debian trixie/main arm64 Packages [9605 kB]
+#5 1.395 Get:5 http://deb.debian.org/debian trixie-updates/main arm64 Packages [5404 B]
+#5 1.407 Get:6 http://deb.debian.org/debian-security trixie-security/main arm64 Packages [69.9 kB]
+#5 2.480 Fetched 9771 kB in 2s (4425 kB/s)
+#5 2.480 Reading package lists...
+#5 3.175 Reading package lists...
+#5 3.703 Building dependency tree...
+#5 3.868 Reading state information...
+#5 4.075 The following additional packages will be installed:
+#5 4.076   libcares2 libnode115 libuv1t64 node-acorn node-balanced-match
+#5 4.076   node-brace-expansion node-cjs-module-lexer node-corepack node-minimatch
+#5 4.076   node-undici node-xtend nodejs-doc
+#5 4.078 Suggested packages:
+#5 4.078   npm
+#5 4.153 The following NEW packages will be installed:
+#5 4.154   build-essential libcares2 libnode115 libuv1t64 node-acorn
+#5 4.154   node-balanced-match node-brace-expansion node-cjs-module-lexer node-corepack
+#5 4.154   node-minimatch node-undici node-xtend nodejs nodejs-doc
+#5 4.213 0 upgraded, 14 newly installed, 0 to remove and 0 not upgraded.
+#5 4.213 Need to get 18.9 MB of archives.
+#5 4.213 After this operation, 80.7 MB of additional disk space will be used.
+#5 4.213 Get:1 http://deb.debian.org/debian trixie/main arm64 build-essential arm64 12.12 [4624 B]
+#5 4.226 Get:2 http://deb.debian.org/debian trixie/main arm64 libcares2 arm64 1.34.5-1 [92.7 kB]
+#5 4.254 Get:3 http://deb.debian.org/debian trixie/main arm64 libuv1t64 arm64 1.50.0-2 [148 kB]
+#5 4.266 Get:4 http://deb.debian.org/debian trixie/main arm64 node-xtend all 4.0.2-3 [3932 B]
+#5 4.266 Get:5 http://deb.debian.org/debian trixie/main arm64 node-corepack all 0.24.0-5 [712 kB]
+#5 4.318 Get:6 http://deb.debian.org/debian trixie/main arm64 nodejs arm64 20.19.2+dfsg-1 [352 kB]
+#5 4.393 Get:7 http://deb.debian.org/debian trixie/main arm64 node-acorn all 8.8.1+ds+~cs25.17.7-2 [128 kB]
+#5 4.400 Get:8 http://deb.debian.org/debian trixie/main arm64 node-cjs-module-lexer all 1.2.3+dfsg-1 [30.6 kB]
+#5 4.401 Get:9 http://deb.debian.org/debian trixie/main arm64 node-balanced-match all 2.0.0-1 [4872 B]
+#5 4.402 Get:10 http://deb.debian.org/debian trixie/main arm64 node-brace-expansion all 2.0.1+~1.1.0-2 [8012 B]
+#5 4.403 Get:11 http://deb.debian.org/debian trixie/main arm64 node-minimatch all 9.0.3-6 [76.8 kB]
+#5 4.408 Get:12 http://deb.debian.org/debian trixie/main arm64 node-undici all 7.3.0+dfsg1+~cs24.12.11-1 [333 kB]
+#5 4.450 Get:13 http://deb.debian.org/debian trixie/main arm64 libnode115 arm64 20.19.2+dfsg-1 [10.9 MB]
+#5 5.483 Get:14 http://deb.debian.org/debian trixie/main arm64 nodejs-doc all 20.19.2+dfsg-1 [6083 kB]
+#5 6.285 debconf: unable to initialize frontend: Dialog
+#5 6.285 debconf: (TERM is not set, so the dialog frontend is not usable.)
+#5 6.285 debconf: falling back to frontend: Readline
+#5 6.291 debconf: unable to initialize frontend: Readline
+#5 6.291 debconf: (This frontend requires a controlling tty.)
+#5 6.291 debconf: falling back to frontend: Teletype
+#5 6.293 debconf: unable to initialize frontend: Teletype
+#5 6.293 debconf: (This frontend requires a controlling tty.)
+#5 6.293 debconf: falling back to frontend: Noninteractive
+#5 6.856 Fetched 18.9 MB in 2s (9774 kB/s)
+#5 6.874 Selecting previously unselected package build-essential.
+#5 6.874 (Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 26157 files and directories currently installed.)
+#5 6.911 Preparing to unpack .../00-build-essential_12.12_arm64.deb ...
+#5 6.912 Unpacking build-essential (12.12) ...
+#5 6.933 Selecting previously unselected package libcares2:arm64.
+#5 6.936 Preparing to unpack .../01-libcares2_1.34.5-1_arm64.deb ...
+#5 6.939 Unpacking libcares2:arm64 (1.34.5-1) ...
+#5 6.962 Selecting previously unselected package libuv1t64:arm64.
+#5 6.966 Preparing to unpack .../02-libuv1t64_1.50.0-2_arm64.deb ...
+#5 6.968 Unpacking libuv1t64:arm64 (1.50.0-2) ...
+#5 6.993 Selecting previously unselected package node-xtend.
+#5 6.995 Preparing to unpack .../03-node-xtend_4.0.2-3_all.deb ...
+#5 6.997 Unpacking node-xtend (4.0.2-3) ...
+#5 7.011 Selecting previously unselected package node-corepack.
+#5 7.014 Preparing to unpack .../04-node-corepack_0.24.0-5_all.deb ...
+#5 7.016 Unpacking node-corepack (0.24.0-5) ...
+#5 7.082 Selecting previously unselected package nodejs.
+#5 7.085 Preparing to unpack .../05-nodejs_20.19.2+dfsg-1_arm64.deb ...
+#5 7.086 Unpacking nodejs (20.19.2+dfsg-1) ...
+#5 7.126 Selecting previously unselected package node-acorn.
+#5 7.129 Preparing to unpack .../06-node-acorn_8.8.1+ds+~cs25.17.7-2_all.deb ...
+#5 7.130 Unpacking node-acorn (8.8.1+ds+~cs25.17.7-2) ...
+#5 7.157 Selecting previously unselected package node-cjs-module-lexer.
+#5 7.160 Preparing to unpack .../07-node-cjs-module-lexer_1.2.3+dfsg-1_all.deb ...
+#5 7.161 Unpacking node-cjs-module-lexer (1.2.3+dfsg-1) ...
+#5 7.175 Selecting previously unselected package node-balanced-match.
+#5 7.178 Preparing to unpack .../08-node-balanced-match_2.0.0-1_all.deb ...
+#5 7.179 Unpacking node-balanced-match (2.0.0-1) ...
+#5 7.191 Selecting previously unselected package node-brace-expansion.
+#5 7.193 Preparing to unpack .../09-node-brace-expansion_2.0.1+~1.1.0-2_all.deb ...
+#5 7.194 Unpacking node-brace-expansion (2.0.1+~1.1.0-2) ...
+#5 7.207 Selecting previously unselected package node-minimatch.
+#5 7.209 Preparing to unpack .../10-node-minimatch_9.0.3-6_all.deb ...
+#5 7.210 Unpacking node-minimatch (9.0.3-6) ...
+#5 7.233 Selecting previously unselected package node-undici.
+#5 7.236 Preparing to unpack .../11-node-undici_7.3.0+dfsg1+~cs24.12.11-1_all.deb ...
+#5 7.240 Unpacking node-undici (7.3.0+dfsg1+~cs24.12.11-1) ...
+#5 7.279 Selecting previously unselected package libnode115:arm64.
+#5 7.281 Preparing to unpack .../12-libnode115_20.19.2+dfsg-1_arm64.deb ...
+#5 7.283 Unpacking libnode115:arm64 (20.19.2+dfsg-1) ...
+#5 7.783 Selecting previously unselected package nodejs-doc.
+#5 7.787 Preparing to unpack .../13-nodejs-doc_20.19.2+dfsg-1_all.deb ...
+#5 7.792 Unpacking nodejs-doc (20.19.2+dfsg-1) ...
+#5 8.108 Setting up libuv1t64:arm64 (1.50.0-2) ...
+#5 8.114 Setting up node-cjs-module-lexer (1.2.3+dfsg-1) ...
+#5 8.118 Setting up node-balanced-match (2.0.0-1) ...
+#5 8.122 Setting up node-brace-expansion (2.0.1+~1.1.0-2) ...
+#5 8.126 Setting up libcares2:arm64 (1.34.5-1) ...
+#5 8.130 Setting up nodejs-doc (20.19.2+dfsg-1) ...
+#5 8.135 Setting up node-undici (7.3.0+dfsg1+~cs24.12.11-1) ...
+#5 8.142 Setting up build-essential (12.12) ...
+#5 8.146 Setting up node-minimatch (9.0.3-6) ...
+#5 8.150 Setting up node-xtend (4.0.2-3) ...
+#5 8.154 Setting up node-acorn (8.8.1+ds+~cs25.17.7-2) ...
+#5 8.158 Setting up node-corepack (0.24.0-5) ...
+#5 8.161 Setting up libnode115:arm64 (20.19.2+dfsg-1) ...
+#5 8.165 Setting up nodejs (20.19.2+dfsg-1) ...
+#5 8.171 update-alternatives: using /usr/bin/nodejs to provide /usr/bin/js (js) in auto mode
+#5 8.175 Processing triggers for libc-bin (2.41-12) ...
+#5 DONE 8.6s
+
+#6 [3/9] RUN groupadd -g 1000 vscode &&     useradd -m -u 1000 -g vscode vscode
+#6 DONE 0.2s
+
+#7 [4/9] WORKDIR /usr/src/app
+#7 DONE 0.0s
+
+#8 [5/9] RUN chown -R vscode:vscode /usr/src/app
+#8 DONE 0.1s
+
+#9 [internal] load .dockerignore
+#9 transferring context: 2B 0.0s done
+#9 DONE 0.1s
+
+#10 [internal] load build context
+#10 transferring context: 29B done
+#10 DONE 0.0s
+
+#11 [6/9] COPY Gemfile ./
+#11 DONE 0.0s
+
+#12 [7/9] RUN gem install connection_pool:2.5.0
+#12 0.505 Successfully installed connection_pool-2.5.0
+#12 0.505 1 gem installed
+#12 DONE 0.5s
+
+#13 [8/9] RUN gem install bundler:2.3.26
+#13 0.585 Successfully installed bundler-2.3.26
+#13 0.585 1 gem installed
+#13 DONE 0.6s
+
+#14 [9/9] RUN bundle install
+#14 2.431 Fetching gem metadata from https://rubygems.org/..........
+#14 4.071 Resolving dependencies...
+#14 4.515 Fetching bigdecimal 3.3.1
+#14 4.517 Fetching drb 2.2.3
+#14 4.518 Fetching minitest 5.26.0
+#14 4.518 Fetching base64 0.3.0
+#14 4.552 Fetching concurrent-ruby 1.3.5
+#14 4.552 Fetching json 2.15.2
+#14 4.552 Fetching logger 1.7.0
+#14 4.552 Fetching securerandom 0.4.1
+#14 4.657 Installing securerandom 0.4.1
+#14 4.659 Installing base64 0.3.0
+#14 4.661 Installing logger 1.7.0
+#14 4.664 Installing drb 2.2.3
+#14 4.677 Fetching uri 1.1.1
+#14 4.687 Installing bigdecimal 3.3.1 with native extensions
+#14 4.688 Fetching public_suffix 5.1.1
+#14 4.707 Installing json 2.15.2 with native extensions
+#14 4.708 Installing minitest 5.26.0
+#14 4.713 Fetching coffee-script-source 1.12.2
+#14 4.727 Fetching execjs 2.10.0
+#14 4.750 Installing uri 1.1.1
+#14 4.784 Fetching colorator 1.1.0
+#14 4.801 Installing concurrent-ruby 1.3.5
+#14 4.806 Installing execjs 2.10.0
+#14 4.811 Fetching commonmarker 0.23.12
+#14 4.826 Installing public_suffix 5.1.1
+#14 4.828 Installing coffee-script-source 1.12.2
+#14 4.842 Fetching csv 3.3.5
+#14 4.860 Installing colorator 1.1.0
+#14 4.889 Fetching simpleidn 0.2.3
+#14 4.911 Fetching eventmachine 1.2.7
+#14 4.935 Fetching http_parser.rb 0.8.0
+#14 4.995 Installing csv 3.3.5
+#14 5.011 Installing commonmarker 0.23.12 with native extensions
+#14 5.067 Installing simpleidn 0.2.3
+#14 5.095 Fetching ffi 1.17.2 (aarch64-linux-gnu)
+#14 5.154 Fetching forwardable-extended 2.6.0
+#14 5.167 Installing http_parser.rb 0.8.0 with native extensions
+#14 5.188 Installing eventmachine 1.2.7 with native extensions
+#14 5.241 Fetching gemoji 4.1.0
+#14 5.317 Installing forwardable-extended 2.6.0
+#14 5.344 Fetching rb-fsevent 0.11.2
+#14 5.366 Installing gemoji 4.1.0
+#14 5.391 Fetching rexml 3.4.4
+#14 5.407 Installing ffi 1.17.2 (aarch64-linux-gnu)
+#14 5.446 Installing rb-fsevent 0.11.2
+#14 5.469 Fetching liquid 4.0.4
+#14 5.487 Installing rexml 3.4.4
+#14 5.530 Fetching mercenary 0.3.6
+#14 5.557 Installing liquid 4.0.4
+#14 5.624 Installing mercenary 0.3.6
+#14 5.645 Fetching rouge 3.30.0
+#14 5.680 Fetching safe_yaml 1.0.5
+#14 5.717 Fetching webrick 1.9.1
+#14 5.838 Installing safe_yaml 1.0.5
+#14 5.876 Installing webrick 1.9.1
+#14 6.357 Installing rouge 3.30.0
+#14 6.399 Fetching racc 1.8.1
+#14 6.463 Fetching jekyll-paginate 1.1.0
+#14 6.561 Installing racc 1.8.1 with native extensions
+#14 6.576 Installing jekyll-paginate 1.1.0
+#14 6.601 Fetching rubyzip 2.4.1
+#14 6.813 Installing rubyzip 2.4.1
+#14 6.833 Fetching jekyll-swiss 1.0.0
+#14 6.869 Fetching unicode-display_width 1.8.0
+#14 6.989 Installing jekyll-swiss 1.0.0
+#14 7.013 Installing unicode-display_width 1.8.0
+#14 7.019 Fetching net-http 0.7.0
+#14 7.047 Fetching coffee-script 2.4.1
+#14 7.164 Installing coffee-script 2.4.1
+#14 7.169 Installing net-http 0.7.0
+#14 7.178 Fetching addressable 2.8.7
+#14 7.220 Fetching dnsruby 1.73.0
+#14 7.510 Installing addressable 2.8.7
+#14 7.545 Fetching i18n 1.14.7
+#14 7.610 Installing dnsruby 1.73.0
+#14 7.692 Installing i18n 1.14.7
+#14 7.736 Fetching tzinfo 2.0.6
+#14 7.762 Fetching pathutil 0.16.2
+#14 7.903 Installing pathutil 0.16.2
+#14 7.912 Installing tzinfo 2.0.6
+#14 7.921 Fetching kramdown 2.4.0
+#14 7.991 Fetching ethon 0.15.0
+#14 8.351 Installing kramdown 2.4.0
+#14 8.451 Installing ethon 0.15.0
+#14 8.525 Fetching rb-inotify 0.11.1
+#14 8.590 Fetching terminal-table 1.8.0
+#14 8.674 Installing rb-inotify 0.11.1
+#14 8.686 Installing terminal-table 1.8.0
+#14 8.713 Fetching jekyll-coffeescript 1.2.2
+#14 8.743 Fetching faraday-net_http 3.4.1
+#14 8.793 Fetching nokogiri 1.18.10 (aarch64-linux-gnu)
+#14 8.841 Installing jekyll-coffeescript 1.2.2
+#14 8.858 Installing faraday-net_http 3.4.1
+#14 8.860 Fetching typhoeus 1.5.0
+#14 8.888 Fetching sass-listen 4.0.0
+#14 9.049 Installing sass-listen 4.0.0
+#14 9.086 Installing typhoeus 1.5.0
+#14 9.106 Fetching listen 3.9.0
+#14 9.174 Fetching kramdown-parser-gfm 1.1.0
+#14 9.312 Installing listen 3.9.0
+#14 9.380 Fetching sass 3.7.4
+#14 9.455 Installing kramdown-parser-gfm 1.1.0
+#14 9.521 Fetching jekyll-watch 2.2.1
+#14 9.556 Installing sass 3.7.4
+#14 9.616 Installing jekyll-watch 2.2.1
+#14 9.814 Fetching jekyll-sass-converter 1.5.2
+#14 9.892 Installing nokogiri 1.18.10 (aarch64-linux-gnu)
+#14 9.909 Installing jekyll-sass-converter 1.5.2
+#14 14.38 Fetching faraday 2.14.0
+#14 14.47 Installing faraday 2.14.0
+#14 14.50 Fetching sawyer 0.9.3
+#14 14.56 Installing sawyer 0.9.3
+#14 14.57 Fetching octokit 4.25.1
+#14 14.65 Installing octokit 4.25.1
+#14 14.76 Fetching github-pages-health-check 1.18.2
+#14 14.78 Fetching jekyll-gist 1.5.0
+#14 14.91 Installing github-pages-health-check 1.18.2
+#14 14.92 Installing jekyll-gist 1.5.0
+#14 15.04 Fetching activesupport 8.1.1
+#14 15.14 Installing activesupport 8.1.1
+#14 15.19 Fetching html-pipeline 2.14.3
+#14 15.25 Installing html-pipeline 2.14.3
+#14 18.40 Fetching jekyll-commonmark 1.4.0
+#14 18.51 Installing jekyll-commonmark 1.4.0
+#14 21.36 Fetching em-websocket 0.5.3
+#14 21.42 Installing em-websocket 0.5.3
+#14 21.43 Fetching jekyll 3.10.0
+#14 21.51 Installing jekyll 3.10.0
+#14 21.53 Fetching jekyll-feed 0.17.0
+#14 21.54 Fetching jekyll-github-metadata 2.16.1
+#14 21.55 Fetching jekyll-include-cache 0.2.1
+#14 21.56 Fetching jekyll-avatar 0.8.0
+#14 21.57 Fetching jekyll-commonmark-ghpages 0.5.1
+#14 21.57 Fetching jekyll-default-layout 0.1.5
+#14 21.58 Fetching jekyll-mentions 1.6.0
+#14 21.59 Fetching jekyll-optional-front-matter 0.3.2
+#14 21.64 Installing jekyll-include-cache 0.2.1
+#14 21.65 Installing jekyll-feed 0.17.0
+#14 21.65 Installing jekyll-github-metadata 2.16.1
+#14 21.66 Installing jekyll-optional-front-matter 0.3.2
+#14 21.66 Installing jekyll-mentions 1.6.0
+#14 21.66 Installing jekyll-commonmark-ghpages 0.5.1
+#14 21.66 Fetching jekyll-readme-index 0.3.0
+#14 21.67 Fetching jekyll-redirect-from 0.16.0
+#14 21.68 Installing jekyll-avatar 0.8.0
+#14 21.69 Installing jekyll-default-layout 0.1.5
+#14 21.69 Fetching jekyll-relative-links 0.6.1
+#14 21.71 Fetching jekyll-seo-tag 2.8.0
+#14 21.71 Fetching jekyll-remote-theme 0.4.3
+#14 21.72 Fetching jekyll-sitemap 1.4.0
+#14 21.74 Installing jekyll-readme-index 0.3.0
+#14 21.74 Fetching jekyll-titles-from-headings 0.5.3
+#14 21.76 Installing jekyll-relative-links 0.6.1
+#14 21.76 Fetching jemoji 0.13.0
+#14 21.76 Installing jekyll-redirect-from 0.16.0
+#14 21.78 Installing jekyll-remote-theme 0.4.3
+#14 21.80 Installing jekyll-seo-tag 2.8.0
+#14 21.80 Installing jekyll-titles-from-headings 0.5.3
+#14 21.81 Installing jekyll-sitemap 1.4.0
+#14 21.82 Installing jemoji 0.13.0
+#14 21.83 Fetching jekyll-theme-cayman 0.2.0
+#14 21.83 Fetching jekyll-theme-dinky 0.2.0
+#14 21.84 Fetching jekyll-theme-hacker 0.2.0
+#14 21.85 Fetching jekyll-theme-leap-day 0.2.0
+#14 21.85 Fetching jekyll-theme-midnight 0.2.0
+#14 21.85 Fetching jekyll-theme-architect 0.2.0
+#14 21.85 Fetching jekyll-theme-merlot 0.2.0
+#14 21.89 Fetching jekyll-theme-minimal 0.2.0
+#14 21.91 Installing jekyll-theme-cayman 0.2.0
+#14 21.91 Installing jekyll-theme-dinky 0.2.0
+#14 21.92 Fetching jekyll-theme-modernist 0.2.0
+#14 21.93 Fetching jekyll-theme-primer 0.6.0
+#14 21.94 Installing jekyll-theme-hacker 0.2.0
+#14 21.95 Fetching jekyll-theme-slate 0.2.0
+#14 21.98 Installing jekyll-theme-merlot 0.2.0
+#14 22.03 Installing jekyll-theme-modernist 0.2.0
+#14 22.04 Installing jekyll-theme-architect 0.2.0
+#14 22.04 Installing jekyll-theme-primer 0.6.0
+#14 22.06 Fetching jekyll-theme-tactile 0.2.0
+#14 22.08 Installing jekyll-theme-slate 0.2.0
+#14 22.11 Fetching jekyll-theme-time-machine 0.2.0
+#14 22.12 Fetching minima 2.5.1
+#14 22.15 Installing jekyll-theme-minimal 0.2.0
+#14 22.17 Installing jekyll-theme-leap-day 0.2.0
+#14 22.19 Installing jekyll-theme-tactile 0.2.0
+#14 22.28 Installing jekyll-theme-time-machine 0.2.0
+#14 22.28 Installing minima 2.5.1
+#14 22.54 Installing jekyll-theme-midnight 0.2.0
+#14 22.69 Fetching github-pages 232
+#14 22.75 Installing github-pages 232
+#14 22.76 Bundle complete! 8 Gemfile dependencies, 97 gems now installed.
+#14 22.76 Use `bundle info [gemname]` to see where a bundled gem is installed.
+#14 22.76 Post-install message from dnsruby:
+#14 22.76 Installing dnsruby...
+#14 22.76   For issues and source code: https://github.com/alexdalitz/dnsruby
+#14 22.76   For general discussion (please tell us how you use dnsruby): https://groups.google.com/forum/#!forum/dnsruby
+#14 22.76 Post-install message from sass:
+#14 22.76 
+#14 22.76 Ruby Sass has reached end-of-life and should no longer be used.
+#14 22.76 
+#14 22.76 * If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+#14 22.76   primary implementation: https://sass-lang.com/install
+#14 22.76 
+#14 22.76 * If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+#14 22.76   sassc gem: https://github.com/sass/sassc-ruby#readme
+#14 22.76 
+#14 22.76 * For more details, please refer to the Sass blog:
+#14 22.76   https://sass-lang.com/blog/posts/7828841
+#14 22.76 
+#14 22.76 Post-install message from html-pipeline:
+#14 22.76 -------------------------------------------------
+#14 22.76 Thank you for installing html-pipeline!
+#14 22.76 You must bundle Filter gem dependencies.
+#14 22.76 See html-pipeline README.md for more details.
+#14 22.76 https://github.com/jch/html-pipeline#dependencies
+#14 22.76 -------------------------------------------------
+#14 22.76 Post-install message from rubyzip:
+#14 22.76 RubyZip 3.0 is coming!
+#14 22.76 **********************
+#14 22.76 
+#14 22.76 The public API of some Rubyzip classes has been modernized to use named
+#14 22.76 parameters for optional arguments. Please check your usage of the
+#14 22.76 following classes:
+#14 22.76   * `Zip::File`
+#14 22.76   * `Zip::Entry`
+#14 22.76   * `Zip::InputStream`
+#14 22.76   * `Zip::OutputStream`
+#14 22.76   * `Zip::DOSTime`
+#14 22.76 
+#14 22.76 Run your test suite with the `RUBYZIP_V3_API_WARN` environment
+#14 22.76 variable set to see warnings about usage of the old API. This will
+#14 22.76 help you to identify any changes that you need to make to your code.
+#14 22.76 See https://github.com/rubyzip/rubyzip/wiki/Updating-to-version-3.x for
+#14 22.76 more information.
+#14 22.76 
+#14 22.76 Please ensure that your Gemfiles and .gemspecs are suitably restrictive
+#14 22.76 to avoid an unexpected breakage when 3.0 is released (e.g. ~> 2.3.0).
+#14 22.76 See https://github.com/rubyzip/rubyzip for details. The Changelog also
+#14 22.76 lists other enhancements and bugfixes that have been implemented since
+#14 22.76 version 2.3.0.
+#14 DONE 23.0s
+
+#15 exporting to image
+#15 exporting layers
+#15 exporting layers 3.6s done
+#15 exporting manifest sha256:1c5760638eb0344a97f686bb27487e0fa4184bda85412e245920f2da294e7d62
+#15 exporting manifest sha256:1c5760638eb0344a97f686bb27487e0fa4184bda85412e245920f2da294e7d62 0.9s done
+#15 exporting config sha256:2ca78a6e373be4b693b9f05bd3ebbaf31bf13528d40d6a60c139319584ca31e9
+#15 exporting config sha256:2ca78a6e373be4b693b9f05bd3ebbaf31bf13528d40d6a60c139319584ca31e9 0.6s done
+#15 exporting attestation manifest sha256:4417f0a606d153b23914004236b5d20d3ed9e690daf0fa0b96ed66513e115858 0.0s done
+#15 exporting manifest list sha256:946e7d430b455b3fca6cbd117c9ab3dc4b5afa3157d1c7baf64021274f5c0141 done
+#15 naming to docker.io/library/jekyll-site:latest 0.0s done
+#15 unpacking to docker.io/library/jekyll-site:latest
+#15 unpacking to docker.io/library/jekyll-site:latest 1.8s done
+#15 DONE 6.9s
+
+#16 resolving provenance for metadata file
+#16 DONE 0.0s
+ jekyll-site  Built
+ Network byounelijahgithubio_default  Creating
+ Network byounelijahgithubio_default  Created
+ Container byounelijahgithubio-jekyll-site-1  Creating
+ Container byounelijahgithubio-jekyll-site-1  Created
+Attaching to jekyll-site-1
+jekyll-site-1  | Resolving dependencies...
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 6.62 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 00:53:51
+jekyll-site-1  |                     _data/cv.json
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 4.497860211 seconds.
+jekyll-site-1  |                     
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 3.647 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 00:57:38
+jekyll-site-1  |                     _data/cv.json
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.598156794 seconds.
+jekyll-site-1  |                     
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 3.763 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 00:59:56
+jekyll-site-1  |                     _data/cv.json
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 3.693 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+jekyll-site-1  |       Regenerating: 2 file(s) changed at 2025-11-05 01:01:07
+jekyll-site-1  |                     .vscode
+jekyll-site-1  |                     .vscode/settings.json
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.642866085 seconds.
+jekyll-site-1  |                     
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 3.574 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 3.469 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 3.67 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:08:53
+jekyll-site-1  |                     images/themes/Profile_Picture.jpg
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.561106793 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:08:58
+jekyll-site-1  |                     images/themes/Profile_Picture.jpg
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.470114668 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:09:01
+jekyll-site-1  |                     images/Profile_Picture.jpg
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.475182529 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:09:08
+jekyll-site-1  |                     images/profile.png
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.988720502 seconds.
+jekyll-site-1  |                     
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 4.941 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:11:13
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.369392001 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:12:39
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.85331921 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:15:30
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 4.179465946 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:15:34
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.076907002 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:15:50
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.823297211 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:16:06
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.470879751 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:16:16
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.218264085 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:16:35
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 4.111520252 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:16:49
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.211869876 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:16:53
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.365603669 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:16:57
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.212268752 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:17:06
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.358814918 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:17:21
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.225404001 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:17:25
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.529656085 seconds.
+jekyll-site-1  |                     
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 3.749 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+jekyll-site-1  |       Regenerating: 5 file(s) changed at 2025-11-05 01:20:50
+jekyll-site-1  |                     _publications/2009-10-01-paper-title-number-1.md
+jekyll-site-1  |                     _publications/2010-10-01-paper-title-number-2.md
+jekyll-site-1  |                     _publications/2015-10-01-paper-title-number-3.md
+jekyll-site-1  |                     _publications/2024-02-17-paper-title-number-4.md
+jekyll-site-1  |                     _publications/2025-06-08-paper-title-number-5.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.26860671 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 6 file(s) changed at 2025-11-05 01:20:53
+jekyll-site-1  |                     _talks/2012-03-01-talk-1.md
+jekyll-site-1  |                     _talks/2013-03-01-tutorial-1.md
+jekyll-site-1  |                     _talks/2014-02-01-talk-2.md
+jekyll-site-1  |                     _talks/2014-03-01-talk-3.md
+jekyll-site-1  |                     _teaching/2014-spring-teaching-1.md
+jekyll-site-1  |                     _teaching/2015-spring-teaching-2.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 2.916534335 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:20:59
+jekyll-site-1  |                     _data/cv.json
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.419319543 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:21:05
+jekyll-site-1  |                     _data/cv.json
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.067003794 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:22:02
+jekyll-site-1  |                     _data/navigation.yml
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.509952696 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 01:22:06
+jekyll-site-1  |                     _data/navigation.yml
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 2.889439168 seconds.
+jekyll-site-1  |                     
+[Kjekyll-site-1 exited with code 1 (restarting)
+jekyll-site-1  | Configuration file: _config.yml
+jekyll-site-1  | Configuration file: _config_docker.yml
+jekyll-site-1  | To use retry middleware with Faraday v2.0+, install `faraday-retry` gem
+jekyll-site-1  |             Source: /usr/src/app
+jekyll-site-1  |        Destination: /usr/src/app/_site
+jekyll-site-1  |  Incremental build: disabled. Enable with --incremental
+jekyll-site-1  |       Generating... 
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     done in 4.631 seconds.
+jekyll-site-1  |  Auto-regeneration: enabled for '/usr/src/app'
+jekyll-site-1  |     Server address: http://0.0.0.0:4000/
+jekyll-site-1  |   Server running... press ctrl-c to stop.
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:06:51
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.365110918 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:07:11
+jekyll-site-1  |                     _pages/about.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 2.978172335 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:08:11
+jekyll-site-1  |                     _portfolio/portfolio-1.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.419088376 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:08:15
+jekyll-site-1  |                     _portfolio/portfolio-1.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 2.748950835 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:09:25
+jekyll-site-1  |                     _portfolio/portfolio-1.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.093058918 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:11:21
+jekyll-site-1  |                     _portfolio/portfolio-1.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 4.115262752 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:17:31
+jekyll-site-1  |                     _portfolio/portfolio-2.html
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.065544668 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:17:34
+jekyll-site-1  |                     _portfolio/portfolio-2.html
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 4.516465363 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:18:38
+jekyll-site-1  |                     _data/navigation.yml
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.148183543 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 02:18:42
+jekyll-site-1  |                     _data/navigation.yml
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 2.80910246 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 15:46:14
+jekyll-site-1  |                     _pages/cv.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.67866296 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 15:46:30
+jekyll-site-1  |                     _pages/cv.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.03858371 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 15:46:33
+jekyll-site-1  |                     _pages/cv.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.006087834 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 15:47:13
+jekyll-site-1  |                     _portfolio/portfolio-1.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.332193043 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 15:47:16
+jekyll-site-1  |                     _portfolio/portfolio-1.md
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.031576794 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 15:48:29
+jekyll-site-1  |                     _data/navigation.yml
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.19246021 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  |       Regenerating: 1 file(s) changed at 2025-11-05 15:48:33
+jekyll-site-1  |                     _data/navigation.yml
+jekyll-site-1  |        Jekyll Feed: Generating feed for posts
+jekyll-site-1  |                     ...done in 3.014854126 seconds.
+jekyll-site-1  |                     
+jekyll-site-1  | [2025-11-05 15:49:00] ERROR '/favicon.ico' not found.
