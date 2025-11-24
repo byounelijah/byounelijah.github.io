@@ -6,9 +6,20 @@ author_profile: true
 ---
 
 {% include base_path %}
+{% include group-by-array collection=site.portfolio field="categories" %}
 
+{% if group_names.size > 0 %}
+  {% for category in group_names %}
+    {% assign posts = group_items[forloop.index0] %}
+    <h2 id="{{ category | slugify }}" class="archive__subtitle">{{ category }}</h2>
+    {% for post in posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endfor %}
+{% endif %}
 
 {% for post in site.portfolio %}
-  {% include archive-single.html %}
+  {% if post.categories == nil or post.categories.size == 0 %}
+    {% include archive-single.html %}
+  {% endif %}
 {% endfor %}
-
